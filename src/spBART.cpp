@@ -779,7 +779,7 @@ void change(Node* tree, modelParam &data, arma::vec &curr_res){
         int old_left_n_leaf = c_node->left->n_leaf;
 
         // Storing old left ancestors
-        arma::vec old_left_ancestors = c_node->left->train_index;
+        arma::vec old_left_ancestors = c_node->left->ancestors;
 
         // Storing all of the old loglikelihood from right;
         double old_right_log_like = c_node->right->log_likelihood;
@@ -795,7 +795,7 @@ void change(Node* tree, modelParam &data, arma::vec &curr_res){
         int old_right_n_leaf = c_node->right->n_leaf;
 
         // Storing old right ancestors
-        arma::vec old_right_ancestors = c_node->right->train_index;
+        arma::vec old_right_ancestors = c_node->right->ancestors;
 
         // Storing test observations
         arma::vec old_left_test_index = c_node->left->test_index;
